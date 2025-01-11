@@ -6,9 +6,9 @@ interface HeroProps {
   subtitle: string;
   description: string;
   buttonText: string;
-  leftImage: string;
-  rightImage: string;
-  discountText?: string;
+  leftImage?: string; // Optional with a default fallback
+  rightImage?: string; // Optional with a default fallback
+  discountText?: string; // Optional
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -16,8 +16,8 @@ const Hero: React.FC<HeroProps> = ({
   subtitle,
   description,
   buttonText,
-  leftImage,
-  rightImage,
+  leftImage = "/images/lamp.png", // Default fallback image
+  rightImage = "/images/cover.png", // Default fallback image
   discountText,
 }) => {
   return (
@@ -25,15 +25,15 @@ const Hero: React.FC<HeroProps> = ({
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* Left Section */}
         <div className="flex items-start gap-10">
-          {/* Lamp Image */}
+          {/* Left Image */}
           <div>
             <Image
               src={leftImage}
               alt="Left Decorative Image"
-              width={128}
-              height={128}
+              width={600}
+              height={600}
               className="object-contain"
-              aria-label="Lamp Image"
+              aria-label="Left Decorative Image"
             />
           </div>
 
