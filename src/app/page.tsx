@@ -22,7 +22,15 @@ const Home: React.FC = () => {
       </header>
 
       <main>
-        <Hero />
+       <Hero
+        title="Welcome to Our Store"
+        subtitle="Limited Time Offer"
+        description="Discover amazing furniture for your home. Transform your space today!"
+        buttonText="Shop Now"
+        leftImage="/images/lamp.png"
+        rightImage="/images/cover.png"
+        discountText="20% OFF"
+      />
         <FeaturedProducts />
         <LatestProducts />
         <ShopexOffer />
